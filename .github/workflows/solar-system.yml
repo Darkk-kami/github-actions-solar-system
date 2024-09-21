@@ -100,12 +100,6 @@ jobs:
           with:
             method: kubeconfig
             kubeconfig: ${{ secrets.KUBECONFIG }}
-
-        - name: Print Kubeconfig
-          run: cat $KUBECONFIG
-
-            
-        - run: kubectl version --short -o yaml
         
         - run: >
             echo "INGRESS_IP=$(kubectl -n ingress-nginx get services
