@@ -95,11 +95,14 @@ jobs:
         - uses: azure/setup-kubectl@v4.0.0
           with:
             version: 'v1.26.0'
+            
         - uses: azure/k8s-set-context@v3.0
           with:
             method: kubeconfig
             kubeconfig: ${{ secrets.KUBECONFIG }}
+            
         - run: kubectl version --short -o yaml
+        
         - run: >
             echo "INGRESS_IP=$(kubectl -n ingress-nginx get services
             ingress-nginx-controller -o
