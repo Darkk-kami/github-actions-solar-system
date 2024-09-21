@@ -102,7 +102,7 @@ jobs:
             kubeconfig: ${{ secrets.KUBECONFIG }}
 
         - name: Print Kubeconfig
-          run: cat ${{ secrets.KUBECONFIG }}
+          run: cat $KUBECONFIG
 
             
         - run: kubectl version --short -o yaml
